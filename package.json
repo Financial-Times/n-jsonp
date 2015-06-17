@@ -1,5 +1,5 @@
 {
-  "name": "next-jsonp-fetch",
+  "name": "n-jsonp-fetch",
   "private": true,
   "dependencies": {
     "chai": "^3.0.0",

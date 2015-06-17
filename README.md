@@ -4,7 +4,7 @@ Emulate fetch's interface, but use jsonp under the hood
 
 ## Usage
 
-    var jsonpFetch = require('next-jsonp-fetch');
+    var jsonpFetch = require('n-jsonp-fetch');
     var opts = {
         timeout: 1000
     };
