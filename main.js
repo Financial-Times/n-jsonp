@@ -38,7 +38,7 @@ module.exports = function (url, opts) {
 		var scriptTag = document.createElement('script');
 		scriptTag.async = true;
 		scriptTag.defer = true;
-		scriptTag.src = url + '?callback=FT.' + callbackName;
+		scriptTag.src = url + (url.indexOf('?') > -1 ? '&' : '?') + 'callback=FT.' + callbackName;
 		document.body.appendChild(scriptTag);
 
 		timeout = setTimeout(function () {

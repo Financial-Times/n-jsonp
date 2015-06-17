@@ -13,6 +13,13 @@ describe('JSONP Fetch', function () {
 		scriptEls[scriptEls.length - 1].src.should.equal('http://other.domain.com/foo?callback=FT.jsonpCallback_1');
 	});
 
+	it('should handle urls with query strings', function (){
+		nJsonpFetch('http://other.domain.com/foo?query=blah');
+		// get the last script tag
+		var scriptEls = document.querySelectorAll('script');
+		scriptEls[scriptEls.length - 1].src.should.equal('http://other.domain.com/foo?query=blah&callback=FT.jsonpCallback_2');
+	});
+
 	it('should return a promise with correct data', function () {
 		return nJsonpFetch('http://next-video.ft.com/api/4165329773001')
 			.then(function (response) {
