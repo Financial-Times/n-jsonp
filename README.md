@@ -32,3 +32,4 @@ Requires [origami build tools](github.com/Financial-Times/origami-build-tools)
 Requires Firefox
 
     $ make test
+
