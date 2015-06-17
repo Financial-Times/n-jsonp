@@ -18,3 +18,17 @@ Where `opts` has the defaults
     {
         timeout: 2000
     }
+
+## Development
+
+### Setup
+
+Requires [origami build tools](github.com/Financial-Times/origami-build-tools)
+
+    $ make install
+
+### Testing
+
+Requires Firefox
+
+    $ make test
