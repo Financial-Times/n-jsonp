@@ -24,8 +24,10 @@ module.exports = function (url, opts) {
 		var timeout;
 		window.FT = window.FT || {};
 		window.FT[callbackName] = function (response) {
+			var status = response.status ? response.status : 200;
 			resolve({
-				ok: response.status ? Math.floor(response.status / 100) === 2 : true,
+				ok: Math.floor(status / 100) === 2,
+				status: status,
 				json: function () {
 					return Promise.resolve(response.body || response);
 				}
