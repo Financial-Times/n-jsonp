@@ -19,15 +19,15 @@ module.exports = function (url, opts) {
 			opts[defaultOptsKey] = defaultOpts[defaultOptsKey];
 		}
 	});
-	return new Promise(function (resolve, reject){
+	return new Promise(function (resolve, reject) {
 		var callbackName = generateCallbackName();
 		var timeout;
 		window.FT = window.FT || {};
-		window.FT[callbackName] = function (response){
+		window.FT[callbackName] = function (response) {
 			resolve({
-				ok: true,
+				ok: response.status ? Math.floor(response.status / 100) === 2 : true,
 				json: function () {
-					return Promise.resolve(response);
+					return Promise.resolve(response.body || response);
 				}
 			});
 			if (timeout){
