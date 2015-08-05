@@ -24,6 +24,8 @@ describe('JSONP Fetch', function () {
 		return nJsonpFetch('http://next-video.ft.com/api/4165329773001')
 			.then(function (response) {
 				response.ok.should.be.true;
+				response.status.should.equal(200);
+
 				return response.json()
 					.then(function (json) {
 						json.should.have.property('id', 4165329773001);
