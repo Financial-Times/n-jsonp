@@ -1,5 +1,3 @@
-'use strict';
-
 // Karma configuration
 // Generated on Thu May 28 2015 16:29:05 GMT+0100 (BST)
 
@@ -17,7 +15,7 @@ module.exports = function(config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			'**/*.spec.js'
+			'**/*.js'
 		],
 
 
@@ -29,11 +27,15 @@ module.exports = function(config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'**/*.spec.js': [ 'browserify' ]
+			'**/*.js': [ 'browserify' ]
 		},
 
+
 		browserify: {
-			transform: [ 'debowerify' ]
+			transform: [
+				['babelify', { presets: [ 'es2015' ] } ],
+				'debowerify'
+			]
 		},
 
 		// test results reporter to use

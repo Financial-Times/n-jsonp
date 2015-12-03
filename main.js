@@ -1,51 +1,47 @@
-'use strict';
+const jsonpCallbackNames = [];
 
-var jsonpCallbackNames = [];
-
-function generateCallbackName() {
-	var base = 'jsonpCallback';
-	var callbackName = base + '_' + (jsonpCallbackNames.length + 1);
+const generateCallbackName = () => {
+	const base = 'jsonpCallback';
+	const callbackName = `${base}_${jsonpCallbackNames.length + 1}`;
 	jsonpCallbackNames.push(callbackName);
 	return callbackName;
-}
+};
 
-module.exports = function (url, opts) {
-	var defaultOpts = {
+const nJsonpFetch = (url, opts) => {
+	const defaultOpts = {
 		timeout: 2000
 	};
 	opts = opts || {};
-	Object.keys(defaultOpts).forEach(function (defaultOptsKey) {
+	Object.keys(defaultOpts).forEach(defaultOptsKey => {
 		if (!opts.hasOwnProperty(defaultOptsKey)) {
 			opts[defaultOptsKey] = defaultOpts[defaultOptsKey];
 		}
 	});
-	return new Promise(function (resolve, reject) {
-		var callbackName = generateCallbackName();
-		var timeout;
+	return new Promise((resolve, reject) => {
+		const callbackName = generateCallbackName();
+		let timeout;
 		window.FT = window.FT || {};
-		window.FT[callbackName] = function (response) {
-			var status = response.status ? response.status : 200;
+		window.FT[callbackName] = response => {
+			const status = response.status ? response.status : 200;
 			resolve({
 				ok: Math.floor(status / 100) === 2,
 				status: status,
-				json: function () {
-					return Promise.resolve(response.body || response);
-				}
+				json: () => Promise.resolve(response.body || response)
 			});
-			if (timeout){
+			if (timeout) {
 				clearTimeout(timeout);
 			}
 		};
 
-		var scriptTag = document.createElement('script');
-		scriptTag.async = true;
+		const scriptTag = document.createElement('script');
 		scriptTag.defer = true;
-		scriptTag.src = url + (url.indexOf('?') > -1 ? '&' : '?') + 'callback=FT.' + callbackName;
+		scriptTag.src = `${url}${url.indexOf('?') > -1 ? '&' : '?'}callback=FT.${callbackName}`;
 		document.body.appendChild(scriptTag);
 
-		timeout = setTimeout(function () {
-			reject(new Error('JSONP request to ' + url + ' timed out'));
+		timeout = setTimeout(() => {
+			reject(new Error(`JSONP request to ${url} timed out`));
 		}, opts.timeout);
 	});
-
 };
+
+export default nJsonpFetch;

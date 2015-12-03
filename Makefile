@@ -1,10 +1,14 @@
 install:
 	obt install --verbose
 
-test:
+verify:
 	obt verify
+
+unit-test:
 	karma start tests/karma.conf.js
 
-test-watch:
-	obt verify
+unit-test-watch:
 	karma start tests/karma.conf.js --no-single-run
+
+test: verify unit-test
+
