@@ -17,6 +17,6 @@
     "origami-build-tools": "^4.4.0"
   },
   "engines": {
-    "node": "4.2.2"
+    "node": "4.2.3"
   }
 }
