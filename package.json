@@ -1,5 +1,6 @@
 {
-  "name": "n-jsonp-fetch",
+  "name": "@financial-times/n-jsonp",
+  "main": "server/main.js",
   "devDependencies": {
     "babel-preset-es2015": "^6.1.18",
     "babelify": "^7.2.0",

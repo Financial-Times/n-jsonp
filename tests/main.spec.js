@@ -1,5 +1,5 @@
 /* global describe, it */
-import nJsonpFetch from '../main';
+import nJsonpFetch from '../client/main';
 
 // NOTE: uses http://jsonplaceholder.typicode.com/, not sure how to genuinely mock jsonp...
 describe('JSONP Fetch', () => {
