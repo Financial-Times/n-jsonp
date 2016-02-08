@@ -7,7 +7,7 @@ const generateCallbackName = () => {
 	return callbackName;
 };
 
-const nJsonpFetch = (url, opts) => {
+export default (url, opts) => {
 	const defaultOpts = {
 		timeout: 2000
 	};
@@ -43,5 +43,3 @@ const nJsonpFetch = (url, opts) => {
 		}, opts.timeout);
 	});
 };
-
-export default nJsonpFetch;

@@ -1,4 +1,4 @@
 {
-  "name": "n-jsonp-fetch",
-  "main": "main.js"
+  "name": "n-jsonp",
+  "main": "client/main.js"
 }
