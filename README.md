@@ -1,29 +1,54 @@
-# Next JSONP Fetch
+# Next JSONP
 
-Emulate fetch's interface, but use jsonp under the hood
+Contins both a client (bower) and server (npm) module
 
-## Usage
+### Client
 
-    var jsonpFetch = require('n-jsonp-fetch');
-    var opts = {
+Emulate [fetch's](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) interface, but use JSONP under the hood
+
+#### Install
+
+    bower install -S n-jsonp
+
+#### Usage
+
+    import jsonpFetch from 'n-jsonp-fetch';
+    const opts = {
         timeout: 1000
     };
     jsonpFetch('http://other.domain.com/foo', opts)
-        .then(function (data) {
+        .then(data => {
             ...
         });
 
-Where `opts` has the defaults
+Where `opts` can take
 
-    {
-        timeout: 2000
-    }
+ * `{number} [timeout=2000]`
+
+### Server
+
+Express middleware, to work with the client module
+
+#### Install
+
+    npm install -S @financial-times/n-jsonp
+
+#### Usage
+
+    import app from 'express';
+    import jsonpMiddleware from '@financial-times/n-jsonp';
+
+    app = express();
+    app.use(jsonpMiddleware);
+    app.get('/', (req, res) => {
+        res.jsonp('a response');
+    });
 
 ## Development
 
 ### Setup
 
-Requires [origami build tools](github.com/Financial-Times/origami-build-tools)
+Requires
 
     $ make install
 
