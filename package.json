@@ -1,6 +1,7 @@
 {
   "name": "@financial-times/n-jsonp",
   "main": "server/main.js",
+  "repository": "Financial-Times/n-jsonp",
   "devDependencies": {
     "babel-core": "^6.5.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.5.0",
