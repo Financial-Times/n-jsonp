@@ -12,7 +12,7 @@ Emulate [fetch's](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) in
 
 #### Usage
 
-    import jsonpFetch from 'n-jsonp-fetch';
+    import jsonpFetch from 'n-jsonp';
     const opts = {
         timeout: 1000
     };
