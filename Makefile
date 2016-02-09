@@ -16,3 +16,5 @@ unit-test-watch:
 
 test: verify unit-test
 
+build:
+	babel --plugins transform-es2015-modules-commonjs -d ./build ./server
