@@ -7,7 +7,12 @@ const generateCallbackName = () => {
 	return callbackName;
 };
 
-export default (url, opts) => {
+const crossDomainFetch = (...args) => {
+	const crossDomainFetch = ('XDomainRequest' in window) ? jsonpFetch : fetch;
+	return crossDomainFetch(...args);
+};
+
+const jsonpFetch = (url, opts) => {
 	const defaultOpts = {
 		timeout: 2000
 	};
@@ -43,3 +48,6 @@ export default (url, opts) => {
 		}, opts.timeout);
 	});
 };
+
+export default jsonpFetch;
+export { crossDomainFetch };
