@@ -21,6 +21,10 @@ Emulate [fetch's](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) in
             ...
         });
 
+Note: If using CommonJS modules,
+
+    const jsonpFetch = require('n-jsonp').default;
+
 Where `opts` can take
 
  * `{number} [timeout=2000]`
@@ -43,6 +47,10 @@ Express middleware, to work with the client module
     app.get('/', (req, res) => {
         res.jsonp('a response');
     });
+
+Note: If using CommonJS modules,
+
+    const jsonpFetch = require('@financial-times/n-jsonp').default;
 
 ## Development
 
