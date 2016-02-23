@@ -2,7 +2,7 @@
   "name": "@financial-times/n-jsonp",
   "main": "build/main.js",
   "repository": "Financial-Times/n-jsonp",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.1",
