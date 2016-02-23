@@ -8,7 +8,7 @@ const generateCallbackName = () => {
 };
 
 const crossDomainFetch = (...args) => {
-	const crossDomainFetch = ('XDomainRequest' in window) ? jsonpFetch : fetch;
+	const crossDomainFetch = ('withCredentials' in new XMLHttpRequest()) ? fetch : jsonpFetch;
 	return crossDomainFetch(...args);
 };
 
