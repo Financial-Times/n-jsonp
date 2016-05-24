@@ -1,7 +1,7 @@
 const jsonpCallbackNames = [];
 
 const generateCallbackName = () => {
-	const base = 'jsonpCallback';
+	const base = 'nJsonpCallback';
 	const callbackName = `${base}_${jsonpCallbackNames.length + 1}`;
 	jsonpCallbackNames.push(callbackName);
 	return callbackName;
