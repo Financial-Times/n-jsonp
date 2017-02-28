@@ -1,5 +1,4 @@
 require('babel-register')({
-	plugins: [
-		'transform-es2015-modules-commonjs'
-	]
+	// just transpile the tests
+	only: filename => /n-jsonp\/test/.test(filename)
 });

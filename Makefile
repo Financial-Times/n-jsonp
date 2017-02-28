@@ -1,20 +1,22 @@
-.PHONY: test
+include n.Makefile
 
-install:
-	npm install
+build: $(shell find server -type f)
+	@echo "Building…"
+	@rm -rf dist
+	@babel -d dist/server server
 
-verify:
-	find ./client ./server ./test -type f | xargs lintspaces -e .editorconfig -i js-comments &&\
-	eslint -c ./.eslintrc.json ./client ./server ./test
+unit-test-server: build
+	@echo "Unit Testing Server…"
+	@mocha --require test/server/setup --recursive --reporter spec test/server
 
-unit-test:
-	mocha --require test/server/setup --recursive --reporter spec test/server &&\
-	karma start test/client/karma.conf.js
+unit-test-client:
+	@echo "Unit Testing Client…"
+	@karma start test/client/karma.conf.js
 
-unit-test-watch:
-	karma start test/client/karma.conf.js --no-single-run
+unit-test-client-watch:
+	@echo "Watching Client Unit Tests…"
+	@karma start test/client/karma.conf.js --no-single-run
+
+unit-test: unit-test-server unit-test-client
 
 test: verify unit-test
-
-build:
-	babel --plugins transform-es2015-modules-commonjs -d ./build ./server

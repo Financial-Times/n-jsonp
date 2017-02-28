@@ -1,0 +1,13 @@
+/.babelrc
+/.editorconfig
+/.eslintrc.js
+/.gitignore
+/circle.yml
+/ft.yml
+/n.Makefile
+/Makefile
+
+/.idea/
+/client/
+/server/
+/test/
