@@ -9,7 +9,7 @@ unit-test-server: build
 	@echo "Unit Testing Server…"
 	@mocha --require test/server/setup --recursive --reporter spec test/server
 
-unit-test-client: build
+unit-test-client:
 	@echo "Unit Testing Client…"
 	@karma start test/client/karma.conf.js
 

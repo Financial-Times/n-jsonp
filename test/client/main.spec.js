@@ -1,4 +1,3 @@
-/* global describe, it */
 import jsonpFetch from '../../client/main';
 
 describe('JSONP Fetch', () => {
