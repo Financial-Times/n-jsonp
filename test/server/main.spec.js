@@ -1,6 +1,6 @@
 import express from 'express';
 import request from 'supertest';
-import jsonpMiddleware from '../../server/main';
+import jsonpMiddleware from '../../dist/server/main';
 
 describe('Middelware', () => {
 

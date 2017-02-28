@@ -1,13 +1,15 @@
 {
   "name": "@financial-times/n-jsonp",
-  "main": "build/main.js",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/main.js",
   "repository": "Financial-Times/n-jsonp",
-  "version": "2.3.4",
+  "scripts": {
+    "prepublish": "make build"
+  },
   "devDependencies": {
     "babel-cli": "^6.5.1",
-    "babel-core": "^6.5.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.5.0",
-    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-env": "^1.1.8",
     "babel-register": "^6.5.1",
     "babelify": "^7.2.0",
     "chai": "^3.0.0",
@@ -28,9 +30,6 @@
     "supertest": "^1.1.0"
   },
   "engines": {
-    "node": "4.2.6"
-  },
-  "scripts": {
-    "prepublish": "make build"
+    "node": ">=4.7.3"
   }
 }
