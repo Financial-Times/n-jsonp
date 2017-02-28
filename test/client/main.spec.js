@@ -6,7 +6,7 @@ describe('JSONP Fetch', () => {
 		jsonpFetch('http://other.domain.com/foo');
 		// get the last script tag
 		const scriptEls = document.querySelectorAll('script');
-		scriptEls[scriptEls.length - 1].src.should.equal('http://other.domain.com/foo?callback=FT.jsonpCallback_1');
+		scriptEls[scriptEls.length - 1].src.should.equal('http://other.domain.com/foo?callback=FT.nJsonpCallback_1');
 	});
 
 	it('should handle urls with query strings', () => {
@@ -14,7 +14,7 @@ describe('JSONP Fetch', () => {
 		// get the last script tag
 		const scriptEls = document.querySelectorAll('script');
 		scriptEls[scriptEls.length - 1].src.should.equal(
-			'http://other.domain.com/foo?query=blah&callback=FT.jsonpCallback_2'
+			'http://other.domain.com/foo?query=blah&callback=FT.nJsonpCallback_2'
 		);
 	});
 
