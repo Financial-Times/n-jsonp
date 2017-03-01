@@ -2,7 +2,7 @@
   "name": "@financial-times/n-jsonp",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "dist/main.js",
+  "main": "dist/server/main.js",
   "repository": "Financial-Times/n-jsonp",
   "scripts": {
     "prepublish": "make build"
