@@ -5,9 +5,10 @@
   "main": "server/main.js",
   "repository": "Financial-Times/n-jsonp",
   "devDependencies": {
-    "chai": "^3.0.0",
-    "chai-as-promised": "^v5.3.0",
-    "eslint": "^3.16.1",
+    "bower": "^1.8.0",
+    "chai": "^4.0.2",
+    "chai-as-promised": "^v7.0.0",
+    "eslint": "^4.0.0",
     "express": "^4.13.3",
     "karma": "^1.5.0",
     "karma-chai": "^0.1.0",
@@ -19,7 +20,7 @@
     "mocha": "^3.2.0",
     "npm-prepublish": "^1.2.2",
     "supertest": "^3.0.0",
-    "webpack": "^2.2.1"
+    "webpack": "^3.0.0"
   },
   "engines": {
     "node": ">=4.7.3"
