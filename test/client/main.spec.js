@@ -26,7 +26,7 @@ describe('JSONP Fetch', () => {
 
 				return response.json()
 					.then(json => {
-						json.message.should.equal('hello world')
+						json.message.should.equal('hello world');
 					});
 			});
 	});
@@ -39,14 +39,19 @@ describe('JSONP Fetch', () => {
 
 				return response.json()
 					.then(json => {
-						json.error.should.equal('your bad')
+						json.error.should.equal('your bad');
 					});
 			});
 	});
 
 	it('should throw if script times out', () => {
 		return jsonpFetch('http://localhost:3001/good', { timeout: 0 })
-			.should.be.rejectedWith('JSONP request to http://localhost:3001/good timed out');
+			.then(() => {})
+			.catch(err => err)
+			.then(err => {
+				err.should.be.an.instanceof(Error);
+				err.message.should.equal('JSONP request to http://localhost:3001/good timed out');
+			});
 	});
 
 });

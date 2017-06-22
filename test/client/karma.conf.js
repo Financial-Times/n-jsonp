@@ -1,6 +1,6 @@
 module.exports = function (config) {
 	config.set({
-		frameworks: ['mocha', 'chai-as-promised', 'chai'],
+		frameworks: ['mocha', 'chai'],
 		files: ['**/*.spec.js'],
 		preprocessors: {
 			// add webpack as preprocessor
