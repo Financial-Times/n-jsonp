@@ -1,6 +1,6 @@
-import express from 'express';
-import request from 'supertest';
-import jsonpMiddleware from '../../dist/server/main';
+const express = require('express');
+const request = require('supertest');
+const jsonpMiddleware = require('../../server/main');
 
 describe('Middelware', () => {
 
