@@ -1,4 +1,4 @@
-import jsonpFetch from '../../client/main';
+const jsonpFetch = require('../../client/main');
 
 describe('JSONP Fetch', () => {
 
@@ -46,7 +46,6 @@ describe('JSONP Fetch', () => {
 
 	it('should throw if script times out', () => {
 		return jsonpFetch('http://localhost:3001/good', { timeout: 0 })
-			.then(() => {})
 			.catch(err => err)
 			.then(err => {
 				err.should.be.an.instanceof(Error);
