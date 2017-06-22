@@ -1,5 +1,6 @@
 .editorconfig
 .eslintrc.js
+package-lock.json
 
 /.idea/
 /node_modules/

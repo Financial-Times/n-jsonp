@@ -1,6 +1,6 @@
 module.exports = function (config) {
 	config.set({
-		frameworks: ['mocha', 'chai'],
+		frameworks: ['mocha', 'chai-as-promised', 'chai'],
 		files: ['**/*.spec.js'],
 		preprocessors: {
 			// add webpack as preprocessor
@@ -12,6 +12,7 @@ module.exports = function (config) {
 		logLevel: config.LOG_INFO,
 		browsers: ['Firefox'],
 		autoWatch: false,
+		singleRun: true,
 		concurrency: Infinity
 	});
 };
