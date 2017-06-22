@@ -13,6 +13,7 @@ Emulate [fetch's](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) in
 #### Usage
 
     import jsonpFetch from 'n-jsonp';
+
     const opts = {
         timeout: 1000
     };
@@ -40,8 +41,14 @@ Express middleware, to work with the client module
 
     app = express();
     app.use(jsonpMiddleware);
+    
     app.get('/', (req, res) => {
         res.jsonp('a response');
+    });
+    
+    app.get('/error', (req, res) => {
+        res.status(500)
+            .jsonp('uh-oh');
     });
 
 ## Development
