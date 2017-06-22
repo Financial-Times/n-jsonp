@@ -1,8 +1,8 @@
 .editorconfig
 .eslintrc.js
+package-lock.json
 
 /.idea/
-/dist/
 /node_modules/
 
 /npm-debug*.log

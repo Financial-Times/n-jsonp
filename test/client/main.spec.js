@@ -1,4 +1,4 @@
-import jsonpFetch from '../../client/main';
+const jsonpFetch = require('../../client/main').default;
 
 describe('JSONP Fetch', () => {
 
@@ -19,28 +19,38 @@ describe('JSONP Fetch', () => {
 	});
 
 	it('should return a promise with correct data', () => {
-		return jsonpFetch('http://next-video.ft.com/api/4165329773001')
+		return jsonpFetch('http://localhost:3001/good')
 			.then(response => {
 				response.ok.should.be.true;
 				response.status.should.equal(200);
 
 				return response.json()
-					.then(json => json.should.have.property('id', 4165329773001));
+					.then(json => {
+						json.message.should.equal('hello world');
+					});
 			});
 	});
 
-	// NOTE - need to mock this somehow
-	it.skip('should return correct error message', () => {
-		return jsonpFetch('http://next-video.ft.com/api/bad-id', { timeout: 100 })
+	it('should return correct error message', () => {
+		return jsonpFetch('http://localhost:3001/400', { timeout: 100 })
 			.then(response => {
 				response.ok.should.be.false;
 				response.status.should.equal(400);
+
+				return response.json()
+					.then(json => {
+						json.error.should.equal('your bad');
+					});
 			});
 	});
 
 	it('should throw if script times out', () => {
-		return jsonpFetch('http://next-video.ft.com/api/bad-id', { timeout: 0 })
-			.should.be.rejectedWith('JSONP request to http://next-video.ft.com/api/bad-id timed out');
+		return jsonpFetch('http://localhost:3001/good', { timeout: 0 })
+			.catch(err => err)
+			.then(err => {
+				err.should.be.an.instanceof(Error);
+				err.message.should.equal('JSONP request to http://localhost:3001/good timed out');
+			});
 	});
 
 });
