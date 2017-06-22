@@ -5,6 +5,7 @@
   "main": "server/main.js",
   "repository": "Financial-Times/n-jsonp",
   "devDependencies": {
+    "@financial-times/n-gage": "^1.7.0",
     "bower": "^1.8.0",
     "chai": "^4.0.2",
     "chai-as-promised": "^v7.0.0",
@@ -13,8 +14,8 @@
     "karma": "^1.5.0",
     "karma-chai": "^0.1.0",
     "karma-chai-as-promised": "^0.1.2",
+    "karma-chrome-launcher": "^2.1.1",
     "karma-cli": "^1.0.1",
-    "karma-firefox-launcher": "^1.0.0",
     "karma-mocha": "^1.3.0",
     "karma-webpack": "^2.0.2",
     "lintspaces-cli": "^0.6.0",
@@ -25,5 +26,16 @@
   },
   "engines": {
     "node": ">=6.11.0"
+  },
+  "config": {
+    "pre-git": {
+      "pre-commit": [
+        "make verify",
+        "node_modules/.bin/secret-squirrel"
+      ]
+    }
+  },
+  "scripts": {
+    "commit": "commit-wizard"
   }
 }
