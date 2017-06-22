@@ -20,7 +20,7 @@
     "mocha": "^3.2.0",
     "npm-prepublish": "^1.2.2",
     "supertest": "^3.0.0",
-    "webpack": "^3.0.0"
+    "webpack": "^2.6.1"
   },
   "engines": {
     "node": ">=4.7.3"
