@@ -1,4 +1,4 @@
-const jsonpFetch = require('../../client/main');
+const jsonpFetch = require('../../client/main').default;
 
 describe('JSONP Fetch', () => {
 
