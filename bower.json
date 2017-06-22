@@ -1,4 +1,14 @@
 {
   "name": "n-jsonp",
-  "main": "client/main.js"
+  "main": "client/main.js",
+  "ignore": [
+    "server",
+    "test",
+    ".gitignore",
+    ".npmignore",
+    "Makefile",
+    "circle.yml",
+    "ft.yml",
+    "package.json",
+  ]
 }

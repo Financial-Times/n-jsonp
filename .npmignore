@@ -1,6 +1,7 @@
 /.editorconfig
 /.eslintrc.js
 /.gitignore
+/bower.json
 /circle.yml
 /ft.yml
 /Makefile
