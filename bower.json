@@ -9,6 +9,6 @@
     "Makefile",
     "circle.yml",
     "ft.yml",
-    "package.json",
+    "package.json"
   ]
 }

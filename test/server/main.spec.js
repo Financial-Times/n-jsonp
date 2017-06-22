@@ -1,6 +1,6 @@
 const express = require('express');
 const request = require('supertest');
-const jsonpMiddleware = require('../../server/main');
+const jsonpMiddleware = require('../../server/main').default;
 
 describe('Middelware', () => {
 

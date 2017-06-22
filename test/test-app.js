@@ -1,5 +1,5 @@
 const express = require('express');
-const jsonpMiddleware = require('../server/main');
+const jsonpMiddleware = require('../server/main').default;
 
 const app = express();
 app.use(jsonpMiddleware);
