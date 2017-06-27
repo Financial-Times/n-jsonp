@@ -1,6 +1,6 @@
 # Next JSONP
 
-Contins both a client (bower) and server (npm) module
+Contains both a client (bower) and server (npm) module
 
 ### Client
 
