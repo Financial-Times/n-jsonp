@@ -41,11 +41,11 @@ Express middleware, to work with the client module
 
     app = express();
     app.use(jsonpMiddleware);
-    
+
     app.get('/', (req, res) => {
         res.jsonp('a response');
     });
-    
+
     app.get('/error', (req, res) => {
         res.status(500)
             .jsonp('uh-oh');
