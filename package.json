@@ -25,15 +25,11 @@
   "engines": {
     "node": ">=6.11.0"
   },
-  "config": {
-    "pre-git": {
-      "pre-commit": [
-        "make verify",
-        "node_modules/.bin/secret-squirrel"
-      ]
-    }
-  },
+  "config": {},
   "scripts": {
-    "commit": "commit-wizard"
+    "commit": "commit-wizard",
+    "precommit": "node_modules/.bin/secret-squirrel",
+    "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
+    "prepush": "make verify -j3"
   }
 }
