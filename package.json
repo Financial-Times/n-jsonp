@@ -5,7 +5,7 @@
   "main": "server/main.js",
   "repository": "Financial-Times/n-jsonp",
   "devDependencies": {
-    "@financial-times/n-gage": "^1.7.0",
+    "@financial-times/n-gage": "^3.5.0",
     "bower": "^1.8.0",
     "chai": "^4.0.2",
     "eslint": "^4.0.0",
