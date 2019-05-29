@@ -19,6 +19,7 @@
     "lintspaces-cli": "^0.6.0",
     "mocha": "^3.2.0",
     "npm-prepublish": "^1.2.2",
+    "snyk": "^1.169.0",
     "supertest": "^3.0.0",
     "webpack": "^2.6.1"
   },
@@ -30,6 +31,7 @@
     "commit": "commit-wizard",
     "precommit": "node_modules/.bin/secret-squirrel",
     "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
-    "prepush": "make verify -j3"
+    "prepush": "make verify -j3",
+    "prepare": "npx snyk protect || npx snyk protect -d || true"
   }
 }
