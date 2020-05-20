@@ -1,5 +1,12 @@
 # Next JSONP
 
+## Deprecated
+
+This package is no longer maintained.
+
+JSONP is required only for older browsers that don't support requests from third party domains.
+For modern browsers you can use fetch() and CORS instead.
+
 Contains both a client (bower) and server (npm) module
 
 ### Client
